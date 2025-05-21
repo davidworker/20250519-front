@@ -5,26 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document123</title>
     <meta name="description" content="這是一個練習用的網站" />
+    <style>
+      .profile {
+        border: 1px solid #000;
+        padding: 20px;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .header > div {
+        border: 1px solid #000;
+        padding: 20px;
+        min-height: 300px;
+      }
+
+      .main {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .main > div {
+        border: 1px solid #000;
+        padding: 20px;
+        background: #dedede;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>這是一個練習用的網站</p>
-
-    <div>123456789</div>
-
-    <div style="color: red">123456789</div>
-    <div style="color: blue">123456789</div>
-
-    <div>
-      <span>123456789</span>
-      <a href="#">
-        <button>123456789</button>
-      </a>
+    <div class="profile">
+      <div class="header">
+        <div class="pic"></div>
+        <div class="info"></div>
+      </div>
+      <div class="main">
+        <div>History</div>
+        <div>Skills</div>
+        <div>Contact</div>
+      </div>
     </div>
-
-    <div>DEMO</div>
-
-    <div>xxxxxxxxxx 1</div>
-    <div>xxxxxxxxxx 2</div>
   </body>
 </html>
