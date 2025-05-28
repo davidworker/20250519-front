@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML form register</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .container {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                width: 100%;
+                max-width: 400px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 30px;
+                font-size: 28px;
+                font-weight: 600;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 8px;
+                color: #555;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                width: 100%;
+                padding: 15px 20px;
+                border: 2px solid #e1e5e9;
+                border-radius: 12px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                background: #f8f9fa;
+                outline: none;
+            }
+
+            input[type="text"]:focus,
+            input[type="password"]:focus {
+                border-color: #667eea;
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                transform: translateY(-2px);
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+                background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            }
+
+            button:active {
+                transform: translateY(-1px);
+            }
+
+            /* 響應式設計 */
+            @media (max-width: 480px) {
+                .container {
+                    padding: 30px 20px;
+                    margin: 10px;
+                }
+
+                h1 {
+                    font-size: 24px;
+                }
+
+                input[type="text"],
+                input[type="password"],
+                button {
+                    padding: 12px 15px;
+                    font-size: 14px;
+                }
+            }
+
+            /* 動畫效果 */
+            .container {
+                animation: fadeInUp 0.6s ease-out;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* 輸入框圖標效果 */
+            .form-group {
+                position: relative;
+            }
+
+            .form-group::before {
+                content: "";
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 1;
+                margin-top: 12px;
+            }
+
+            .form-group:nth-child(1)::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+            }
+
+            .form-group:nth-child(2)::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z'/%3E%3C/svg%3E");
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                padding-left: 50px;
+            }
+
+            /* 性別選擇樣式 */
+            .gender-group {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .gender-option {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+                padding: 12px 20px;
+                border: 2px solid #e1e5e9;
+                border-radius: 12px;
+                background: #f8f9fa;
+                transition: all 0.3s ease;
+                flex: 1;
+                justify-content: center;
+                position: relative;
+            }
+
+            .gender-option:hover {
+                border-color: #667eea;
+                background: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+            }
+
+            .gender-option input[type="radio"] {
+                display: none;
+            }
+
+            .gender-option input[type="radio"]:checked + .radio-custom {
+                background: #667eea;
+                border-color: #667eea;
+            }
+
+            .gender-option input[type="radio"]:checked + .radio-custom::after {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+            }
+
+            .gender-option input[type="radio"]:checked ~ .gender-label {
+                color: #667eea;
+                font-weight: 600;
+            }
+
+            .gender-option input[type="radio"]:checked ~ .gender-icon {
+                color: #667eea;
+            }
+
+            .radio-custom {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #ccc;
+                border-radius: 50%;
+                position: relative;
+                background: #fff;
+                transition: all 0.3s ease;
+            }
+
+            .radio-custom::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                border-radius: 50%;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .gender-label {
+                font-size: 16px;
+                font-weight: 500;
+                color: #555;
+                transition: all 0.3s ease;
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 0;
+            }
+
+            .gender-icon {
+                font-size: 18px;
+                color: #999;
+                transition: all 0.3s ease;
+            }
+
+            /* 性別組標題 */
+            .form-group.gender-group-container .form-label {
+                text-align: center;
+                margin-bottom: 15px;
+                color: #555;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            /* 為性別組添加圖標 */
+            .form-group.gender-group-container::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 11.8 12.8 14 10 14S5 11.8 5 9V7L3 7V9C3 12.5 5.6 15.4 9 15.9V18H7V20H17V18H15V15.9C18.4 15.4 21 12.5 21 9Z'/%3E%3C/svg%3E");
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 0;
+                top: 15px;
+            }
+
+            .form-group.gender-group-container {
+                padding-top: 35px;
+            }
+
+            /* 興趣選擇樣式 */
+            .interest-group-container {
+                padding-top: 35px;
+            }
+
+            .interest-group-container .form-label {
+                text-align: center;
+                margin-bottom: 15px;
+                color: #555;
+                font-weight: 500;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .interest-group {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 10px;
+            }
+
+            .interest-option {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                padding: 12px 15px;
+                border: 2px solid #e1e5e9;
+                border-radius: 10px;
+                background: #f8f9fa;
+                transition: all 0.3s ease;
+                position: relative;
+                font-size: 14px;
+            }
+
+            .interest-option:hover {
+                border-color: #667eea;
+                background: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+            }
+
+            .interest-option input[type="checkbox"] {
+                display: none;
+            }
+
+            .interest-option input[type="checkbox"]:checked + .checkbox-custom {
+                background: #667eea;
+                border-color: #667eea;
+            }
+
+            .interest-option
+                input[type="checkbox"]:checked
+                + .checkbox-custom::after {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+            }
+
+            .interest-option input[type="checkbox"]:checked ~ .interest-label {
+                color: #667eea;
+                font-weight: 600;
+            }
+
+            .checkbox-custom {
+                width: 18px;
+                height: 18px;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                position: relative;
+                background: #fff;
+                transition: all 0.3s ease;
+                flex-shrink: 0;
+            }
+
+            .checkbox-custom::after {
+                content: "✓";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .interest-label {
+                font-size: 14px;
+                font-weight: 500;
+                color: #555;
+                transition: all 0.3s ease;
+                text-transform: none;
+                letter-spacing: normal;
+                margin: 0;
+                user-select: none;
+            }
+
+            .interest-icon {
+                font-size: 16px;
+                color: #999;
+                transition: all 0.3s ease;
+                margin-right: 5px;
+            }
+
+            .interest-option input[type="checkbox"]:checked ~ .interest-icon {
+                color: #667eea;
+            }
+
+            /* 為興趣組添加圖標 */
+            .form-group.interest-group-container::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 0;
+                top: 15px;
+            }
+
+            /* 響應式設計 */
+            @media (max-width: 480px) {
+                .interest-group {
+                    grid-template-columns: 1fr;
+                }
+
+                .interest-option {
+                    padding: 10px 12px;
+                    font-size: 13px;
+                }
+            }
+
+            /* 下拉選單樣式 */
+            select {
+                width: 100%;
+                padding: 15px 50px 15px 20px;
+                border: 2px solid #e1e5e9;
+                border-radius: 12px;
+                font-size: 16px;
+                background: #f8f9fa;
+                color: #333;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 15px center;
+                background-size: 20px;
+            }
+
+            select:focus {
+                border-color: #667eea;
+                background-color: #fff;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                transform: translateY(-2px);
+            }
+
+            select:hover {
+                border-color: #667eea;
+                background-color: #fff;
+            }
+
+            /* 下拉選項樣式 */
+            select option {
+                padding: 12px;
+                background: #fff;
+                color: #333;
+                border: none;
+            }
+
+            select option:hover {
+                background: #f0f4ff;
+            }
+
+            select option:checked {
+                background: #667eea;
+                color: #fff;
+            }
+
+            /* 為國家選擇組添加圖標 */
+            .form-group:has(select)::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+                content: "";
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 1;
+                margin-top: 12px;
+            }
+
+            /* 替代方案：使用地球圖標 */
+            .country-select::before {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM11 19.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E");
+                content: "";
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: 1;
+                margin-top: 12px;
+            }
+
+            .country-select {
+                position: relative;
+            }
+
+            .country-select select {
+                padding-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>會員註冊</h1>
+            <form
+                action="https://book.niceinfos.com/api/form/index.php"
+                method="post"
+            >
+                <div class="form-group">
+                    <label for="account">Account</label>
+                    <input
+                        type="text"
+                        id="account"
+                        name="account"
+                        placeholder="請輸入帳號"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="請輸入密碼"
+                    />
+                </div>
+                <div class="form-group gender-group-container">
+                    <label class="form-label">性別</label>
+                    <div class="gender-group">
+                        <label for="gender-male" class="gender-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                id="gender-male"
+                                value="male"
+                            />
+                            <span class="radio-custom"></span>
+                            <span class="gender-icon">♂</span>
+                            <span class="gender-label">男</span>
+                        </label>
+                        <label for="gender-female" class="gender-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                id="gender-female"
+                                value="female"
+                            />
+                            <span class="radio-custom"></span>
+                            <span class="gender-icon">♀</span>
+                            <span class="gender-label">女</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group interest-group-container">
+                    <label class="form-label">興趣</label>
+                    <div class="interest-group">
+                        <label
+                            for="interest-basketball"
+                            class="interest-option"
+                        >
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-basketball"
+                                value="籃球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">🏀</span>
+                            <span class="interest-label">籃球</span>
+                        </label>
+                        <label for="interest-football" class="interest-option">
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-football"
+                                value="足球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">⚽</span>
+                            <span class="interest-label">足球</span>
+                        </label>
+                        <label for="interest-baseball" class="interest-option">
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-baseball"
+                                value="棒球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">⚾</span>
+                            <span class="interest-label">棒球</span>
+                        </label>
+                        <label for="interest-softball" class="interest-option">
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-softball"
+                                value="壘球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">🥎</span>
+                            <span class="interest-label">壘球</span>
+                        </label>
+                        <label for="interest-tennis" class="interest-option">
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-tennis"
+                                value="網球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">🎾</span>
+                            <span class="interest-label">網球</span>
+                        </label>
+                        <label for="interest-badminton" class="interest-option">
+                            <input
+                                type="checkbox"
+                                name="interest[]"
+                                id="interest-badminton"
+                                value="羽球"
+                            />
+                            <span class="checkbox-custom"></span>
+                            <span class="interest-icon">🏸</span>
+                            <span class="interest-label">羽球</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group country-select">
+                    <label for="country">國家</label>
+                    <select name="country" id="country">
+                        <option value="">請選擇國家</option>
+                        <option value="台灣">🇹🇼 台灣</option>
+                        <option value="美國">🇺🇸 美國</option>
+                        <option value="日本">🇯🇵 日本</option>
+                        <option value="韓國">🇰🇷 韓國</option>
+                        <option value="中國">🇨🇳 中國</option>
+                        <option value="其他">🌍 其他</option>
+                    </select>
+                </div>
+                <button type="submit">註冊</button>
+            </form>
+        </div>
+    </body>
+</html>

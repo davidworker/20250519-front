@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML file upload</title>
+    </head>
+    <body>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <div
+                class="container"
+                style="
+                    padding: 20px;
+                    margin-bottom: 10px;
+                    border: 1px solid #000;
+                "
+            >
+                <h1>HTML file upload</h1>
+                <input type="file" name="file" id="file" accept="image/*" />
+            </div>
+            <button type="submit">送出</button>
+        </form>
+    </body>
+</html>
