@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Combinators</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/combinators.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="slogan">Combinators</h1>
+            <h2>後代選擇器</h2>
+            <div class="demo">
+                <div class="child">
+                    <span>小孩</span>
+                    <span class="grandchild">孫子</span>
+                </div>
+            </div>
+            <h2>子階選擇器</h2>
+            <div class="demo">
+                <div class="child2">
+                    <span>小孩</span>
+                    <span class="grandchild">孫子</span>
+                    <span>孫子2</span>
+                </div>
+            </div>
+            <h2>相鄰兄弟選擇器(嚴謹)</h2>
+            <div>
+                <div>
+                    <label class="trigger-btn" for="trigger">開啟</label>
+                </div>
+                <input type="checkbox" class="trigger" id="trigger" />
+                <div class="content">你看到我了嗎?</div>
+            </div>
+            <!-- 當顯示 .content 時，.trigger-btn 的背景顏色會變成紅色，而且文字改為關閉 -->
+        </div>
+    </body>
+</html>

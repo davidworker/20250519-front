@@ -5,3 +5,21 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.container {
+    /* max-width: 1440px; */
+    max-width: 800px; /* 設定最大寬度 */
+    margin: 0 auto; /* 置中 */
+    height: 100%; /* 佔滿整個視窗 */
+    position: relative; /* 相對定位 */
+    padding: 0 15px; /* 左右內距 */
+}
+
+.slogan {
+    font-size: 40px;
+    font-weight: bold;
+    color: #3e3eff;
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3e3eff;
+}
