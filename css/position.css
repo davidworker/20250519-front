@@ -1,0 +1,39 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.static {
+    position: static;
+    background-color: #000000;
+    right: 150px;
+}
+
+.relative {
+    position: relative;
+    background-color: #ee5757;
+    right: 150px;
+}
+
+.absolute {
+    position: absolute;
+    background-color: #0306a3;
+    right: 150px;
+}
+
+.fixed {
+    position: fixed;
+    background-color: #b61879;
+    right: 150px;
+}
+
+.sticky {
+    position: sticky;
+    background-color: #b6df47;
+    right: 150px;
+}

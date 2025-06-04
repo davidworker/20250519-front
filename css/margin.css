@@ -1,0 +1,28 @@
+.box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000000;
+    padding: 10px;
+
+    margin: auto;
+    text-align: center;
+}
+
+.all-margin {
+    margin: 10px;
+}
+
+.two-margin {
+    margin: 10px 20px;
+}
+
+.four-margin {
+    margin: 10px 20px 30px 40px;
+}
+
+/** 區塊元素水平置中 */
+.auto-margin {
+    margin-left: auto;
+    margin-right: auto;
+    /** 上下沒有效果 */
+}

@@ -1,0 +1,21 @@
+.box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #000000;
+    border-width: 10px; /** 可控制四個邊框寬度 */
+    border-style: solid; /** 可控制四個邊框樣式 */
+    /**
+    border-style: solid; 常用
+    border-style: dashed; 常用
+    border-style: dotted; 常用
+    border-style: double;
+    border-style: groove;
+    border-style: ridge;
+    border-style: inset;
+    border-style: outset;
+    border-style: none;
+    border-style: hidden;
+    */
+    border-color: #a13131; /** 可控制四個邊框顏色 */
+    margin-bottom: 10px;
+}

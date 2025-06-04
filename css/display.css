@@ -1,0 +1,23 @@
+.box {
+    background-color: red;
+    color: white;
+    width: 300px;
+}
+
+.block,
+.inline,
+.inline-block {
+    margin: 20px auto;
+}
+
+.block .box {
+    display: block;
+}
+
+.inline .box {
+    display: inline;
+}
+
+.inline-block .box {
+    display: inline-block;
+}
