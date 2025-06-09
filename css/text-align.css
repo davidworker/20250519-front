@@ -1,0 +1,31 @@
+.item {
+    padding: 10px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.justify {
+    width: 200px;
+    text-align: justify;
+}
+
+.center2 {
+    width: 200px;
+    height: 300px;
+    line-height: 300px;
+    border: 1px solid #000;
+    background-color: #ff4949;
+    text-align: center;
+}

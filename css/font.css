@@ -1,0 +1,79 @@
+.size-1 {
+    font-size: 10px;
+}
+
+.size-2 {
+    font-size: 20px;
+}
+
+.size-3 {
+    font-size: 30px;
+}
+
+.size-4 {
+    font-size: 40px;
+}
+
+.size-5 {
+    font-size: 50px;
+}
+
+.size-6 {
+    font-size: 60px;
+}
+
+.size-7 {
+    font-size: 70px;
+}
+
+.base {
+    font-size: 16px;
+}
+
+.weight-1 {
+    font-weight: 100;
+}
+
+.weight-2 {
+    font-weight: 200;
+}
+
+.weight-3 {
+    font-weight: 300;
+}
+
+.weight-4 {
+    font-weight: 400;
+}
+
+.weight-5 {
+    font-weight: 500;
+}
+
+.weight-6 {
+    font-weight: 600;
+}
+
+.weight-7 {
+    font-weight: 700;
+}
+
+.weight-8 {
+    font-weight: 800;
+}
+
+.weight-9 {
+    font-weight: 900;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
