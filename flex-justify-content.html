@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex - justify-content</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/flex.css" />
+        <link rel="stylesheet" href="css/flex-justify-content.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="slogan">Flex - justify-content</h1>
+            <h2 class="title">justify-content: flex-start;</h2>
+            <div class="row x-start">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+            </div>
+            <h2 class="title">justify-content: center;</h2>
+            <div class="row x-center">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+            </div>
+            <h2 class="title">justify-content: flex-end;</h2>
+            <div class="row x-end">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+            </div>
+            <h2 class="title">inline-flex</h2>
+            <div style="display: flex">
+                <div class="row inline-flex">
+                    <div class="col">1</div>
+                    <div class="col">2</div>
+                    <div class="col">3</div>
+                </div>
+
+                <div class="row inline-flex">
+                    <div class="col">1</div>
+                    <div class="col">2</div>
+                    <div class="col">3</div>
+                </div>
+            </div>
+            <h2 class="title">justify-content: space-between;</h2>
+            <div class="row x-space-between">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+                <div class="col">4</div>
+                <!-- <div class="col">5</div> -->
+            </div>
+            <h2 class="title">justify-content: space-around;</h2>
+            <div class="row x-space-around">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+                <div class="col">4</div>
+            </div>
+            <h2 class="title">justify-content: space-evenly;</h2>
+            <div class="row x-space-evenly">
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+                <div class="col">4</div>
+            </div>
+            <h2 class="title">
+                justify-content: space-between; alternate space-around
+            </h2>
+            <div
+                class="row x-space-between"
+                style="padding-left: 100px; padding-right: 100px"
+            >
+                <div class="col">1</div>
+                <div class="col">2</div>
+                <div class="col">3</div>
+                <div class="col">4</div>
+                <!-- <div class="col">5</div> -->
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex 商品列表範例</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, "Helvetica Neue", Arial, sans-serif;
+                background-color: #f5f5f5;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .header h1 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                color: #666;
+                font-size: 1.1rem;
+            }
+
+            /* Flex 商品容器 */
+            .products-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            /* 商品卡片 */
+            .product-card {
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                flex: 0 1 300px;
+                min-width: 280px;
+                max-width: 320px;
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            .product-image {
+                width: 100%;
+                height: 200px;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+
+            .product-badge {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #e74c3c;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            .product-info {
+                padding: 20px;
+            }
+
+            .product-title {
+                font-size: 1.3rem;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #2c3e50;
+            }
+
+            .product-description {
+                color: #666;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+            .product-price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            .price-current {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #e74c3c;
+            }
+
+            .price-original {
+                font-size: 1rem;
+                color: #999;
+                text-decoration: line-through;
+            }
+
+            .product-actions {
+                display: flex;
+                gap: 10px;
+            }
+
+            .btn {
+                flex: 1;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn-primary {
+                background-color: #3498db;
+                color: white;
+            }
+
+            .btn-primary:hover {
+                background-color: #2980b9;
+            }
+
+            .btn-secondary {
+                background-color: #ecf0f1;
+                color: #2c3e50;
+            }
+
+            .btn-secondary:hover {
+                background-color: #bdc3c7;
+            }
+
+            /* 響應式設計 */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 15px;
+                }
+
+                .header h1 {
+                    font-size: 2rem;
+                }
+
+                .products-container {
+                    gap: 15px;
+                }
+
+                .product-card {
+                    flex: 1 1 100%;
+                    max-width: none;
+                }
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+                .product-card {
+                    flex: 0 1 calc(50% - 10px);
+                }
+            }
+
+            @media (min-width: 1025px) {
+                .product-card {
+                    flex: 0 1 calc(33.333% - 14px);
+                }
+            }
+
+            /* 載入動畫 */
+            .product-card {
+                animation: fadeInUp 0.6s ease forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            .product-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+            .product-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            .product-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+            .product-card:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+            .product-card:nth-child(5) {
+                animation-delay: 0.5s;
+            }
+            .product-card:nth-child(6) {
+                animation-delay: 0.6s;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>熱銷商品推薦</h1>
+                <p>精選優質商品，使用 Flexbox 完美布局</p>
+            </div>
+
+            <div class="products-container">
+                <!-- 商品卡片 1 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                            );
+                        "
+                    >
+                        <div class="product-badge">熱銷</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">無線藍牙耳機</h3>
+                        <p class="product-description">
+                            高音質立體聲，長達24小時續航，完美音樂體驗
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 1,299</span>
+                            <span class="price-original">NT$ 1,699</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品卡片 2 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #f093fb 0%,
+                                #f5576c 100%
+                            );
+                        "
+                    >
+                        <div class="product-badge">新品</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">智慧手環</h3>
+                        <p class="product-description">
+                            健康監測，運動追蹤，智慧提醒功能一應俱全
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 2,499</span>
+                            <span class="price-original">NT$ 2,999</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品卡片 3 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #4facfe 0%,
+                                #00f2fe 100%
+                            );
+                        "
+                    ></div>
+                    <div class="product-info">
+                        <h3 class="product-title">無線充電板</h3>
+                        <p class="product-description">
+                            快速充電技術，支援多種設備，簡約設計美觀實用
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 899</span>
+                            <span class="price-original">NT$ 1,199</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品卡片 4 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #fa709a 0%,
+                                #fee140 100%
+                            );
+                        "
+                    >
+                        <div class="product-badge">限時</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">便攜行動電源</h3>
+                        <p class="product-description">
+                            20000mAh大容量，快充技術，輕薄設計攜帶方便
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 1,599</span>
+                            <span class="price-original">NT$ 1,999</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品卡片 5 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #a8edea 0%,
+                                #fed6e3 100%
+                            );
+                        "
+                    ></div>
+                    <div class="product-info">
+                        <h3 class="product-title">藍牙音響</h3>
+                        <p class="product-description">
+                            360度環繞音效，防水設計，戶外聚會首選
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 2,199</span>
+                            <span class="price-original">NT$ 2,799</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品卡片 6 -->
+                <div class="product-card">
+                    <div
+                        class="product-image"
+                        style="
+                            background-image: linear-gradient(
+                                135deg,
+                                #d299c2 0%,
+                                #fef9d7 100%
+                            );
+                        "
+                    >
+                        <div class="product-badge">推薦</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">車用手機支架</h3>
+                        <p class="product-description">
+                            磁吸式設計，360度旋轉，安全駕駛好幫手
+                        </p>
+                        <div class="product-price">
+                            <span class="price-current">NT$ 499</span>
+                            <span class="price-original">NT$ 699</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary">立即購買</button>
+                            <button class="btn btn-secondary">
+                                加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 簡單的互動效果
+            document.addEventListener("DOMContentLoaded", function () {
+                const buttons = document.querySelectorAll(".btn");
+
+                buttons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const action = this.textContent;
+                        const productTitle =
+                            this.closest(".product-card").querySelector(
+                                ".product-title"
+                            ).textContent;
+
+                        // 簡單的提示效果
+                        const originalText = this.textContent;
+                        this.textContent =
+                            action === "立即購買" ? "已加入!" : "已加入!";
+                        this.style.background = "#27ae60";
+
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = "";
+                        }, 1500);
+
+                        console.log(`${action}: ${productTitle}`);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
