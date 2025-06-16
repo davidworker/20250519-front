@@ -1,0 +1,51 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.header {
+    background: #3b59dd;
+    color: #fff;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-items: center;
+}
+
+.header .menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.header .menu li:hover {
+    color: #db4328;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    background: #238383;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page:nth-child(odd) {
+    background: #d528db;
+}

@@ -1,0 +1,26 @@
+.grid-children {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 500px;
+    gap: 10px;
+}
+
+.grid-children .item {
+    background-color: #2858db;
+    color: #fff;
+}
+
+.item.span-2 {
+    grid-column: span 2;
+}
+
+.item.s2-span4 {
+    grid-column: 2 / span 2;
+}
+
+.item.demo {
+    grid-column: span 2;
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3; */
+    /* grid-column: 3 / span 10; */
+}

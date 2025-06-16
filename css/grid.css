@@ -1,0 +1,21 @@
+.d-grid {
+    display: grid;
+    gap: 20px;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+    /* grid-template-columns: 80px repeat(5, 1fr); */
+    /* grid-template-columns: 1fr 2fr 3fr; */
+    /* min-width, max-width */
+    grid-template-columns: minmax(300px, 1fr) 1fr;
+    border: 1px solid #000;
+    height: 600px;
+}
+
+.d-grid .item {
+    /* width: 100px; */
+    /* height: 100px; */
+    background: #2858db;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

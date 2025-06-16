@@ -1,0 +1,60 @@
+.item {
+    padding: 10px;
+    background-color: #2858db;
+    color: #fff;
+}
+
+html,
+body {
+    font-size: 24px;
+}
+
+.rem-10 {
+    font-size: 1rem;
+}
+
+.rem-20 {
+    font-size: 2rem;
+}
+
+.rem-30 {
+    font-size: 3rem;
+}
+
+.rem-40 {
+    font-size: 4rem;
+}
+
+.rem-50 {
+    font-size: 5rem;
+}
+
+.rem-60 {
+    font-size: 6rem;
+}
+
+.rem-70 {
+    font-size: 7rem;
+}
+
+.rem-80 {
+    font-size: 8rem;
+}
+
+.rem-90 {
+    font-size: 9rem;
+}
+
+.rem-100 {
+    font-size: 10rem;
+}
+
+.t1 {
+    font-size: 500px;
+    font-size: 200px;
+}
+
+.t2 {
+    font-size: 2em;
+    /* font-size: 50%; */
+}
