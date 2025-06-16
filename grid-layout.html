@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>購物商城 - CSS Grid 版型</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Microsoft JhengHei", Arial, sans-serif;
+                line-height: 1.6;
+                background-color: #f5f5f5;
+            }
+
+            /* 主要網格容器 */
+            .container {
+                display: grid;
+                grid-template-areas:
+                    "header header header"
+                    "nav nav nav"
+                    "sidebar main main"
+                    "footer footer footer";
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-columns: 250px 1fr 1fr;
+                min-height: 100vh;
+                gap: 20px;
+                padding: 20px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            /* 頁首 */
+            .header {
+                grid-area: header;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+
+            /* 導航列 */
+            .nav {
+                grid-area: nav;
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 10px;
+                list-style: none;
+            }
+
+            .nav li {
+                text-align: center;
+            }
+
+            .nav a {
+                display: block;
+                padding: 12px 20px;
+                background: #f8f9fa;
+                color: #333;
+                text-decoration: none;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            .nav a:hover {
+                background: #667eea;
+                color: white;
+                transform: translateY(-2px);
+            }
+
+            /* 側邊欄 */
+            .sidebar {
+                grid-area: sidebar;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                height: fit-content;
+            }
+
+            .sidebar h3 {
+                color: #333;
+                margin-bottom: 15px;
+                font-size: 1.3rem;
+                border-bottom: 2px solid #667eea;
+                padding-bottom: 5px;
+            }
+
+            .filter-group {
+                margin-bottom: 20px;
+            }
+
+            .filter-group h4 {
+                color: #555;
+                margin-bottom: 10px;
+            }
+
+            .filter-group label {
+                display: block;
+                margin-bottom: 8px;
+                cursor: pointer;
+                padding: 5px;
+                border-radius: 4px;
+                transition: background 0.2s ease;
+            }
+
+            .filter-group label:hover {
+                background: #f0f0f0;
+            }
+
+            .filter-group input {
+                margin-right: 8px;
+            }
+
+            /* 主要內容區 */
+            .main {
+                grid-area: main;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .main h2 {
+                color: #333;
+                margin-bottom: 20px;
+                font-size: 1.8rem;
+            }
+
+            /* 產品網格 */
+            .products-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .product-card {
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                border: 1px solid #e0e0e0;
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            }
+
+            .product-image {
+                width: 100%;
+                height: 200px;
+                background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #999;
+                font-size: 1.1rem;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-title {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 8px;
+            }
+
+            .product-description {
+                color: #666;
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .product-price {
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #e74c3c;
+                margin-bottom: 12px;
+            }
+
+            .product-button {
+                width: 100%;
+                padding: 10px;
+                background: #667eea;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 500;
+                transition: background 0.3s ease;
+            }
+
+            .product-button:hover {
+                background: #5a6fd8;
+            }
+
+            /* 頁腳 */
+            .footer {
+                grid-area: footer;
+                background: #333;
+                color: white;
+                padding: 30px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+                margin-bottom: 20px;
+            }
+
+            .footer-section h4 {
+                margin-bottom: 15px;
+                color: #667eea;
+            }
+
+            .footer-section ul {
+                list-style: none;
+            }
+
+            .footer-section li {
+                margin-bottom: 8px;
+            }
+
+            .footer-section a {
+                color: #ccc;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-section a:hover {
+                color: #667eea;
+            }
+
+            .footer-bottom {
+                border-top: 1px solid #555;
+                padding-top: 20px;
+                color: #999;
+            }
+
+            /* 響應式設計 */
+            @media (max-width: 768px) {
+                .container {
+                    grid-template-areas:
+                        "header"
+                        "nav"
+                        "main"
+                        "sidebar"
+                        "footer";
+                    grid-template-columns: 1fr;
+                    padding: 10px;
+                    gap: 15px;
+                }
+
+                .nav ul {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .products-grid {
+                    grid-template-columns: repeat(
+                        auto-fill,
+                        minmax(250px, 1fr)
+                    );
+                    gap: 15px;
+                }
+
+                .footer-content {
+                    grid-template-columns: 1fr;
+                    text-align: left;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .header h1 {
+                    font-size: 2rem;
+                }
+
+                .nav ul {
+                    grid-template-columns: 1fr;
+                }
+
+                .products-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 頁首 -->
+            <header class="header">
+                <h1>🛍️ 精品購物商城</h1>
+                <p>發現最優質的商品，享受極致購物體驗</p>
+            </header>
+
+            <!-- 導航列 -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">首頁</a></li>
+                    <li><a href="#electronics">3C電子</a></li>
+                    <li><a href="#fashion">時尚服飾</a></li>
+                    <li><a href="#home-living">居家生活</a></li>
+                    <li><a href="#sports">運動休閒</a></li>
+                    <li><a href="#books">書籍文具</a></li>
+                    <li><a href="#beauty">美容保養</a></li>
+                    <li><a href="#food">美食特產</a></li>
+                </ul>
+            </nav>
+
+            <!-- 側邊欄 -->
+            <aside class="sidebar">
+                <h3>🔍 商品篩選</h3>
+
+                <div class="filter-group">
+                    <h4>價格範圍</h4>
+                    <label><input type="checkbox" /> $0 - $500</label>
+                    <label><input type="checkbox" /> $500 - $1000</label>
+                    <label><input type="checkbox" /> $1000 - $2000</label>
+                    <label><input type="checkbox" /> $2000 以上</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>品牌</h4>
+                    <label><input type="checkbox" /> Apple</label>
+                    <label><input type="checkbox" /> Samsung</label>
+                    <label><input type="checkbox" /> Sony</label>
+                    <label><input type="checkbox" /> Nike</label>
+                    <label><input type="checkbox" /> Adidas</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>評價</h4>
+                    <label><input type="checkbox" /> ⭐⭐⭐⭐⭐ 5星</label>
+                    <label><input type="checkbox" /> ⭐⭐⭐⭐ 4星以上</label>
+                    <label><input type="checkbox" /> ⭐⭐⭐ 3星以上</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>配送方式</h4>
+                    <label><input type="checkbox" /> 免費配送</label>
+                    <label><input type="checkbox" /> 當日配送</label>
+                    <label><input type="checkbox" /> 超商取貨</label>
+                </div>
+            </aside>
+
+            <!-- 主要內容 -->
+            <main class="main">
+                <h2>🔥 熱銷商品推薦</h2>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">iPhone 15 Pro</div>
+                        <div class="product-info">
+                            <div class="product-title">iPhone 15 Pro Max</div>
+                            <div class="product-description">
+                                最新 A17 Pro 晶片，titanium
+                                鈦金屬設計，專業相機系統
+                            </div>
+                            <div class="product-price">NT$ 44,900</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">MacBook Air</div>
+                        <div class="product-info">
+                            <div class="product-title">MacBook Air M3</div>
+                            <div class="product-description">
+                                輕薄效能筆電，M3 晶片加持，13.6 吋 Liquid Retina
+                                顯示器
+                            </div>
+                            <div class="product-price">NT$ 39,900</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">AirPods Pro</div>
+                        <div class="product-info">
+                            <div class="product-title">AirPods Pro (第2代)</div>
+                            <div class="product-description">
+                                主動式降噪，空間音訊，MagSafe 充電盒
+                            </div>
+                            <div class="product-price">NT$ 7,490</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">iPad Air</div>
+                        <div class="product-info">
+                            <div class="product-title">iPad Air (第5代)</div>
+                            <div class="product-description">
+                                M1 晶片，10.9 吋 Liquid Retina 顯示器，支援
+                                Apple Pencil
+                            </div>
+                            <div class="product-price">NT$ 18,900</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">Apple Watch</div>
+                        <div class="product-info">
+                            <div class="product-title">
+                                Apple Watch Series 9
+                            </div>
+                            <div class="product-description">
+                                健康監測，運動追蹤，Always-On Retina 顯示器
+                            </div>
+                            <div class="product-price">NT$ 12,900</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">Nike 運動鞋</div>
+                        <div class="product-info">
+                            <div class="product-title">Nike Air Max 90</div>
+                            <div class="product-description">
+                                經典復古風格，舒適氣墊中底，多色可選
+                            </div>
+                            <div class="product-price">NT$ 3,600</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">Sony 耳機</div>
+                        <div class="product-info">
+                            <div class="product-title">Sony WH-1000XM5</div>
+                            <div class="product-description">
+                                業界領先降噪技術，30小時續航，Hi-Res 音質
+                            </div>
+                            <div class="product-price">NT$ 9,900</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">Switch 遊戲機</div>
+                        <div class="product-info">
+                            <div class="product-title">
+                                Nintendo Switch OLED
+                            </div>
+                            <div class="product-description">
+                                7吋 OLED 螢幕，增強音效，64GB 儲存空間
+                            </div>
+                            <div class="product-price">NT$ 10,790</div>
+                            <button class="product-button">
+                                🛒 加入購物車
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 頁腳 -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>購物指南</h4>
+                        <ul>
+                            <li><a href="#how-to-order">如何訂購</a></li>
+                            <li><a href="#payment">付款方式</a></li>
+                            <li><a href="#shipping">配送資訊</a></li>
+                            <li><a href="#return">退換貨政策</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>客戶服務</h4>
+                        <ul>
+                            <li><a href="#contact">聯絡我們</a></li>
+                            <li><a href="#faq">常見問題</a></li>
+                            <li><a href="#warranty">保固服務</a></li>
+                            <li><a href="#track">訂單追蹤</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>關於我們</h4>
+                        <ul>
+                            <li><a href="#about">公司介紹</a></li>
+                            <li><a href="#news">最新消息</a></li>
+                            <li><a href="#careers">人才招募</a></li>
+                            <li><a href="#investors">投資人關係</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>追蹤我們</h4>
+                        <ul>
+                            <li><a href="#facebook">📘 Facebook</a></li>
+                            <li><a href="#instagram">📷 Instagram</a></li>
+                            <li><a href="#line">💬 LINE</a></li>
+                            <li><a href="#youtube">📺 YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2024 精品購物商城. 版權所有 | 隱私政策 | 服務條款
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            // 簡單的互動功能
+            document.addEventListener("DOMContentLoaded", function () {
+                // 購物車按鈕點擊效果
+                const buttons = document.querySelectorAll(".product-button");
+                buttons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const originalText = this.textContent;
+                        this.textContent = "✅ 已加入";
+                        this.style.background = "#27ae60";
+
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = "#667eea";
+                        }, 2000);
+                    });
+                });
+
+                // 篩選器互動
+                const checkboxes = document.querySelectorAll(
+                    '.filter-group input[type="checkbox"]'
+                );
+                checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener("change", function () {
+                        if (this.checked) {
+                            this.parentElement.style.background = "#e8f2ff";
+                            this.parentElement.style.color = "#667eea";
+                            this.parentElement.style.fontWeight = "500";
+                        } else {
+                            this.parentElement.style.background = "";
+                            this.parentElement.style.color = "";
+                            this.parentElement.style.fontWeight = "";
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
