@@ -1,0 +1,15 @@
+.row {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+}
+
+.row .col {
+    padding: 10px;
+    background: red;
+    color: white;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

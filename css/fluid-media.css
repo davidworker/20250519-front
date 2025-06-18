@@ -1,0 +1,11 @@
+.media {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+.media-item {
+    opacity: 0.5;
+    max-width: 100%;
+    height: auto;
+}
