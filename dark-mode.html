@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dark Mode</title>
+        <link rel="stylesheet" href="css/dark-mode.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">Now is light mode</div>
+            <div>
+                <button class="toggle-btn" onclick="toggleDarkMode()">
+                    Toggle Dark Mode
+                </button>
+            </div>
+            <div>
+                <button class="toggle-btn" onclick="toggleMyMode()">
+                    Toggle My Mode
+                </button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function toggleDarkMode() {
+            console.log("toggleDarkMode");
+            const isDarkMode =
+                document.documentElement.getAttribute("data-theme") === "dark";
+            document.documentElement.setAttribute(
+                "data-theme",
+                isDarkMode ? "light" : "dark"
+            );
+        }
+
+        function toggleMyMode() {
+            console.log("toggleMyMode");
+            const isMyMode =
+                document.documentElement.getAttribute("data-theme") === "my";
+            document.documentElement.setAttribute(
+                "data-theme",
+                isMyMode ? "light" : "my"
+            );
+        }
+    </script>
+</html>

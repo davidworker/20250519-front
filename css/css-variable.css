@@ -1,0 +1,24 @@
+:root {
+    --primary-color: rgb(43, 60, 212);
+    --primary-bg: #ff8e8e;
+}
+
+.article {
+    --padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+    padding: var(--padding);
+    margin-bottom: 10px;
+}
+
+.item {
+    background: #000;
+    padding: var(--padding);
+}
+
+.wrap {
+    --primary-color: rgb(212, 43, 43);
+    color: var(--primary-color);
+    background-color: var(--primary-bg);
+    padding: var(--padding);
+}
