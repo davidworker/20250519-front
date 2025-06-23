@@ -8,9 +8,10 @@
     "prettier.useTabs": false,
     // "liveServer.settings.useLocalIp": true,
     // "liveServer.settings.port": 5600,
+    "liveServer.settings.root": "/dist",
     "liveSassCompile.settings.formats": [
         {
-            "format": "compressed",
+            "format": "expanded",
             "extensionName": ".css",
             "savePath": "/dist/css"
         }
