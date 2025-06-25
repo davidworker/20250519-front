@@ -15,5 +15,8 @@
             "extensionName": ".css",
             "savePath": "/dist/css"
         }
-    ]
+    ],
+    "files.associations": {
+        "*.scss": "scss"
+    }
 }
