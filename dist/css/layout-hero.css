@@ -180,4 +180,11 @@ ul {
 .info .row p {
   text-align: center;
   line-height: 25px;
+}
+
+.footer {
+  background-color: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
 }/*# sourceMappingURL=layout-hero.css.map */
