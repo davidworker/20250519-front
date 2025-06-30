@@ -8,6 +8,16 @@
                 display: grid;
                 position: absolute;
                 right: 0;
+
+                &.active {
+                    > span {
+                        background-color: #fd1f1f;
+                    }
+                }
+
+                > span {
+                    transition: all 0.3s ease;
+                }
             }
 
             .menu {

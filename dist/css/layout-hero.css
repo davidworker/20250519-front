@@ -214,6 +214,12 @@ ul {
     position: absolute;
     right: 0;
   }
+  .header .wrap .hamburger.active > span {
+    background-color: #fd1f1f;
+  }
+  .header .wrap .hamburger > span {
+    transition: all 0.3s ease;
+  }
   .header .wrap .menu {
     display: none;
   }
