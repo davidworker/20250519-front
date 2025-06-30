@@ -53,6 +53,25 @@
                 }
             }
         }
+
+        .hamburger {
+            display: none;
+            width: $header-height;
+            height: $header-height;
+            // border: 1px solid red;
+            // display: grid;
+            grid-template-columns: 1fr;
+            gap: 1px;
+            padding: 10px;
+            align-items: center;
+            cursor: pointer;
+
+            > span {
+                height: 5px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+        }
     }
 }
 

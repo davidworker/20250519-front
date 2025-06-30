@@ -72,6 +72,21 @@ ul {
   background-color: #fff;
   color: #000;
 }
+.header .wrap .hamburger {
+  display: none;
+  width: 60px;
+  height: 60px;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  padding: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.header .wrap .hamburger > span {
+  height: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
 
 .main {
   width: 100%;
@@ -190,6 +205,18 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
+  .header .wrap {
+    position: relative;
+    justify-content: center;
+  }
+  .header .wrap .hamburger {
+    display: grid;
+    position: absolute;
+    right: 0;
+  }
+  .header .wrap .menu {
+    display: none;
+  }
   .main .wrap .btn-group {
     flex-direction: column;
     width: 300px;

@@ -1,4 +1,26 @@
 @media screen and (max-width: 768px) {
+    .header {
+        .wrap {
+            position: relative;
+            justify-content: center;
+
+            .hamburger {
+                display: grid;
+                position: absolute;
+                right: 0;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                // text-align: center;
+                // flex: 1;
+            }
+        }
+    }
+
     .main {
         .wrap {
             .btn-group {
