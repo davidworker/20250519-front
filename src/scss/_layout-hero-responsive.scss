@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px) {
+    .main {
+        .wrap {
+            .btn-group {
+                flex-direction: column;
+                width: 300px;
+            }
+        }
+    }
+
+    .info {
+        .row {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main {
+        .wrap {
+            .btn-group {
+                width: unset;
+            }
+        }
+    }
+}

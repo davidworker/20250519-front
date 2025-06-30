@@ -187,4 +187,20 @@ ul {
   color: #fff;
   text-align: center;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .main .wrap .btn-group {
+    flex-direction: column;
+    width: 300px;
+  }
+  .info .row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main .wrap .btn-group {
+    width: unset;
+  }
 }/*# sourceMappingURL=layout-hero.css.map */
