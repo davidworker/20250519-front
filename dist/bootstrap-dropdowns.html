@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=settings"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">台灣縣市選擇</h2>
+
+                    <!-- Bootstrap Dropdown -->
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-outline-primary dropdown-toggle w-100"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            請選擇縣市
+                        </button>
+                        <ul class="dropdown-menu w-100">
+                            <!-- 直轄市 -->
+                            <li><h6 class="dropdown-header">直轄市</h6></li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="taipei"
+                                    >台北市<span
+                                        class="material-symbols-outlined"
+                                    >
+                                        settings
+                                    </span></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="new-taipei"
+                                    >新北市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="taoyuan"
+                                    >桃園市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="taichung"
+                                    >台中市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="tainan"
+                                    >台南市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="kaohsiung"
+                                    >高雄市</a
+                                >
+                            </li>
+
+                            <li><hr class="dropdown-divider" /></li>
+
+                            <!-- 縣 -->
+                            <li><h6 class="dropdown-header">縣</h6></li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="keelung"
+                                    >基隆市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="hsinchu-city"
+                                    >新竹市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="hsinchu-county"
+                                    >新竹縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="miaoli"
+                                    >苗栗縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="changhua"
+                                    >彰化縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="nantou"
+                                    >南投縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="yunlin"
+                                    >雲林縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="chiayi-city"
+                                    >嘉義市</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="chiayi-county"
+                                    >嘉義縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="pingtung"
+                                    >屏東縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="yilan"
+                                    >宜蘭縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="hualien"
+                                    >花蓮縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="taitung"
+                                    >台東縣</a
+                                >
+                            </li>
+
+                            <li><hr class="dropdown-divider" /></li>
+
+                            <!-- 離島 -->
+                            <li><h6 class="dropdown-header">離島</h6></li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="penghu"
+                                    >澎湖縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="kinmen"
+                                    >金門縣</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="#"
+                                    data-value="lienchiang"
+                                    >連江縣</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 顯示選擇結果 -->
+                    <div class="mt-4">
+                        <div
+                            class="alert alert-info d-none"
+                            id="selected-result"
+                        >
+                            <strong>您選擇的縣市：</strong
+                            ><span id="selected-city"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="">
+                <select name="city" id="city" class="form-select d-none">
+                    <option value="">請選擇縣市</option>
+                    <option value="taipei">台北市</option>
+                    <option value="new-taipei">新北市</option>
+                    <option value="taoyuan">桃園市</option>
+                    <option value="taichung">台中市</option>
+                    <option value="tainan">台南市</option>
+                    <option value="kaohsiung">高雄市</option>
+                    <option value="keelung">基隆市</option>
+                    <option value="hsinchu-city">新竹市</option>
+                    <option value="hsinchu-county">新竹縣</option>
+                    <option value="miaoli">苗栗縣</option>
+                    <option value="changhua">彰化縣</option>
+                    <option value="nantou">南投縣</option>
+                </select>
+                <button class="btn btn-primary">送出</button>
+            </form>
+        </div>
+
+        <!-- 加入 JavaScript 處理選擇事件 -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const dropdownItems =
+                    document.querySelectorAll(".dropdown-item");
+                const dropdownButton =
+                    document.querySelector(".dropdown-toggle");
+                const selectedResult =
+                    document.getElementById("selected-result");
+                const selectedCity = document.getElementById("selected-city");
+
+                const city = document.getElementById("city");
+
+                dropdownItems.forEach((item) => {
+                    item.addEventListener("click", function (e) {
+                        e.preventDefault();
+
+                        // 更新按鈕文字
+                        dropdownButton.textContent = this.textContent;
+
+                        // 顯示選擇結果
+                        selectedCity.textContent = this.textContent;
+                        selectedResult.classList.remove("d-none");
+
+                        // 可以在這裡加入其他處理邏輯
+                        console.log(
+                            "選擇的縣市：",
+                            this.textContent,
+                            "值：",
+                            this.dataset.value
+                        );
+
+                        city.value = this.dataset.value;
+                    });
+                });
+            });
+        </script>
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"
+    ></script>
+</html>
