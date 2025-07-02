@@ -9,14 +9,16 @@
                 position: absolute;
                 right: 0;
 
-                &.active {
-                    > span {
-                        background-color: #fd1f1f;
-                    }
-                }
-
                 > span {
-                    transition: all 0.3s ease;
+                    &:nth-child(1) {
+                        animation: hamburger-line-1-close 0.5s ease forwards;
+                    }
+                    &:nth-child(2) {
+                        animation: hamburger-line-2-close 0.5s ease forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: hamburger-line-3-close 0.5s ease forwards;
+                    }
                 }
             }
 
@@ -27,6 +29,45 @@
             .logo {
                 // text-align: center;
                 // flex: 1;
+            }
+        }
+
+        #menu-toggle:checked ~ .wrap {
+            .hamburger {
+                > span {
+                    background-color: #fd1f1f;
+                    &:nth-child(1) {
+                        animation: hamburger-line-1-open 0.5s ease forwards;
+                    }
+                    &:nth-child(2) {
+                        animation: hamburger-line-2-open 0.5s ease forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: hamburger-line-3-open 0.5s ease forwards;
+                    }
+                }
+                z-index: 10;
+            }
+
+            .menu {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                z-index: 9;
+                background-color: #00000079;
+
+                ul {
+                    width: 50%;
+                    height: 100%;
+                    background-color: #2876be;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                    padding: 20px;
+                }
             }
         }
     }
@@ -45,6 +86,61 @@
             grid-template-columns: 1fr;
             gap: 40px;
         }
+    }
+}
+
+// Keyframes for hamburger menu animations
+@keyframes hamburger-line-1-open {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(15px) rotate(45deg);
+    }
+}
+
+@keyframes hamburger-line-1-close {
+    0% {
+        transform: translateY(15px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes hamburger-line-2-open {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes hamburger-line-2-close {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hamburger-line-3-open {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+@keyframes hamburger-line-3-close {
+    0% {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
     }
 }
 

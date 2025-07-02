@@ -11,6 +11,10 @@
     font-weight: $header-font-weight;
     z-index: 99;
 
+    #menu-toggle {
+        display: none;
+    }
+
     .wrap {
         display: flex;
         justify-content: space-between;
