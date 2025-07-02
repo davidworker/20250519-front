@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>王小明 - 個人履歷</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=settings"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <!-- 導航列 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">王小明 履歷</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">關於我</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">工作經驗</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education">教育背景</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">技能</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">聯絡方式</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要內容 -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- 左側邊欄 -->
+                <div class="col-lg-4 bg-light p-4">
+                    <!-- 個人照片和基本資訊 -->
+                    <div class="text-center mb-4">
+                        <img
+                            src="https://via.placeholder.com/200x200/007bff/ffffff?text=王小明"
+                            class="rounded-circle img-fluid mb-3"
+                            alt="個人照片"
+                            width="200"
+                        />
+                        <h2 class="h4 fw-bold text-primary">王小明</h2>
+                        <p class="lead text-muted">前端工程師</p>
+                    </div>
+
+                    <!-- 聯絡資訊 -->
+                    <div class="mb-4" id="contact">
+                        <h5 class="text-primary mb-3">
+                            <i class="bi bi-person-lines-fill"></i> 聯絡資訊
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong>電話：</strong> 0912-345-678
+                            </li>
+                            <li class="mb-2">
+                                <strong>Email：</strong> wang.xiaoming@email.com
+                            </li>
+                            <li class="mb-2">
+                                <strong>地址：</strong> 台北市大安區復興南路一段
+                            </li>
+                            <li class="mb-2">
+                                <strong>LinkedIn：</strong>
+                                linkedin.com/in/wang-xiaoming
+                            </li>
+                            <li class="mb-2">
+                                <strong>GitHub：</strong>
+                                github.com/wangxiaoming
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 技能 -->
+                    <div class="mb-4" id="skills">
+                        <h5 class="text-primary mb-3">技能</h5>
+
+                        <div class="mb-3">
+                            <h6>程式語言</h6>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-primary">JavaScript</span>
+                                <span class="badge bg-primary">TypeScript</span>
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">HTML5</span>
+                                <span class="badge bg-primary">CSS3</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>框架與工具</h6>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-success">React</span>
+                                <span class="badge bg-success">Vue.js</span>
+                                <span class="badge bg-success">Node.js</span>
+                                <span class="badge bg-success">Bootstrap</span>
+                                <span class="badge bg-success">Git</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>設計工具</h6>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-info">Figma</span>
+                                <span class="badge bg-info">Adobe XD</span>
+                                <span class="badge bg-info">Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 語言能力 -->
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">語言能力</h5>
+                        <div class="mb-2">
+                            <span class="fw-semibold">中文</span>
+                            <div class="progress mt-1">
+                                <div
+                                    class="progress-bar bg-success"
+                                    style="width: 100%"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-semibold">英文</span>
+                            <div class="progress mt-1">
+                                <div
+                                    class="progress-bar bg-warning"
+                                    style="width: 85%"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <span class="fw-semibold">日文</span>
+                            <div class="progress mt-1">
+                                <div
+                                    class="progress-bar bg-info"
+                                    style="width: 60%"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右側主要內容 -->
+                <div class="col-lg-8 p-4">
+                    <!-- 關於我 -->
+                    <section class="mb-5" id="about">
+                        <h3 class="text-primary mb-3">關於我</h3>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    我是一位富有熱情的前端工程師，擁有5年以上的網頁開發經驗。專精於React、Vue.js等現代前端框架，
+                                    致力於創造使用者友善且具有良好體驗的網頁應用程式。喜歡學習新技術，並樂於與團隊成員分享知識與經驗。
+                                </p>
+                                <p class="card-text">
+                                    在過去的工作經驗中，我成功完成了多個大型專案，包括電商平台、企業官網、以及行動應用程式。
+                                    我注重代碼品質，熟悉敏捷開發流程，並具備良好的溝通協調能力。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 工作經驗 -->
+                    <section class="mb-5" id="experience">
+                        <h3 class="text-primary mb-3">工作經驗</h3>
+
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-start mb-2"
+                                >
+                                    <div>
+                                        <h5 class="card-title mb-1">
+                                            資深前端工程師
+                                        </h5>
+                                        <h6 class="card-subtitle text-muted">
+                                            科技創新有限公司
+                                        </h6>
+                                    </div>
+                                    <span class="badge bg-primary"
+                                        >2021年1月 - 現在</span
+                                    >
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>• 負責公司主要產品的前端開發與維護</li>
+                                    <li>
+                                        • 使用React.js開發複雜的單頁應用程式
+                                    </li>
+                                    <li>
+                                        •
+                                        與設計師和後端工程師密切合作，確保產品品質
+                                    </li>
+                                    <li>• 指導初級工程師，協助團隊技術成長</li>
+                                    <li>• 改善網站效能，使載入速度提升30%</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-start mb-2"
+                                >
+                                    <div>
+                                        <h5 class="card-title mb-1">
+                                            前端工程師
+                                        </h5>
+                                        <h6 class="card-subtitle text-muted">
+                                            網路服務股份有限公司
+                                        </h6>
+                                    </div>
+                                    <span class="badge bg-secondary"
+                                        >2019年3月 - 2020年12月</span
+                                    >
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>• 開發響應式網頁，支援多種裝置</li>
+                                    <li>• 使用Vue.js建立電商平台前端界面</li>
+                                    <li>
+                                        • 參與敏捷開發流程，定期進行代碼審查
+                                    </li>
+                                    <li>• 優化SEO，提升網站搜尋排名</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-start mb-2"
+                                >
+                                    <div>
+                                        <h5 class="card-title mb-1">
+                                            網頁設計師
+                                        </h5>
+                                        <h6 class="card-subtitle text-muted">
+                                            設計工作室
+                                        </h6>
+                                    </div>
+                                    <span class="badge bg-secondary"
+                                        >2017年6月 - 2019年2月</span
+                                    >
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li>• 設計企業官網與品牌形象</li>
+                                    <li>
+                                        • 使用HTML、CSS、JavaScript開發靜態網站
+                                    </li>
+                                    <li>• 與客戶溝通需求，提供設計建議</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 教育背景 -->
+                    <section class="mb-5" id="education">
+                        <h3 class="text-primary mb-3">教育背景</h3>
+
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <div
+                                    class="d-flex justify-content-between align-items-start mb-2"
+                                >
+                                    <div>
+                                        <h5 class="card-title mb-1">
+                                            資訊工程學系
+                                        </h5>
+                                        <h6 class="card-subtitle text-muted">
+                                            國立台灣大學
+                                        </h6>
+                                    </div>
+                                    <span class="badge bg-info"
+                                        >2013年9月 - 2017年6月</span
+                                    >
+                                </div>
+                                <p class="card-text mb-0">
+                                    學士學位 | GPA: 3.8/4.0
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted"
+                                        >主修程式設計、演算法、資料結構、軟體工程</small
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 專案作品 -->
+                    <section class="mb-5">
+                        <h3 class="text-primary mb-3">專案作品</h3>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">電商購物平台</h5>
+                                        <p class="card-text">
+                                            使用React和Redux開發的完整電商系統，包含購物車、訂單管理、會員系統等功能。
+                                        </p>
+                                        <div
+                                            class="d-flex flex-wrap gap-1 mb-2"
+                                        >
+                                            <span
+                                                class="badge bg-outline-primary"
+                                                >React</span
+                                            >
+                                            <span
+                                                class="badge bg-outline-primary"
+                                                >Redux</span
+                                            >
+                                            <span
+                                                class="badge bg-outline-primary"
+                                                >Bootstrap</span
+                                            >
+                                        </div>
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-primary btn-sm"
+                                            >查看專案</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">任務管理系統</h5>
+                                        <p class="card-text">
+                                            團隊協作的任務管理工具，支援即時更新、檔案上傳、討論功能。
+                                        </p>
+                                        <div
+                                            class="d-flex flex-wrap gap-1 mb-2"
+                                        >
+                                            <span
+                                                class="badge bg-outline-success"
+                                                >Vue.js</span
+                                            >
+                                            <span
+                                                class="badge bg-outline-success"
+                                                >Node.js</span
+                                            >
+                                            <span
+                                                class="badge bg-outline-success"
+                                                >Socket.io</span
+                                            >
+                                        </div>
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-primary btn-sm"
+                                            >查看專案</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 證照與認證 -->
+                    <section class="mb-5">
+                        <h3 class="text-primary mb-3">證照與認證</h3>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2"
+                                                >✓</span
+                                            >
+                                            <span>AWS Certified Developer</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2"
+                                                >✓</span
+                                            >
+                                            <span>Google Analytics認證</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2"
+                                                >✓</span
+                                            >
+                                            <span>TOEIC 890分</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2"
+                                                >✓</span
+                                            >
+                                            <span>JLPT N2日文檢定</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- 頁尾 -->
+        <footer class="bg-dark text-white text-center py-3">
+            <div class="container">
+                <p class="mb-0">&copy; 2024 王小明履歷. 感謝您的關注!</p>
+            </div>
+        </footer>
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"
+    ></script>
+</html>
