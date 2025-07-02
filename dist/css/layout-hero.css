@@ -208,6 +208,9 @@ ul {
 }
 
 @media screen and (max-width: 768px) {
+  .header #menu-toggle {
+    display: none;
+  }
   .header .wrap {
     position: relative;
     justify-content: center;
@@ -227,7 +230,43 @@ ul {
     animation: hamburger-line-3-close 0.5s ease forwards;
   }
   .header .wrap .menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    animation: menu-close 0.3s ease forwards;
+  }
+  .header .wrap .menu ul {
+    width: 50%;
+    height: 100%;
+    background-color: #2876be;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    transform: translateX(-100%);
+    animation: menu-slide-out 0.3s ease forwards;
+  }
+  .header .wrap .menu ul li {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .header .wrap .menu ul li:nth-child(1) {
+    animation: menu-item-hide 0.3s ease forwards;
+  }
+  .header .wrap .menu ul li:nth-child(2) {
+    animation: menu-item-hide 0.3s ease 0.05s forwards;
+  }
+  .header .wrap .menu ul li:nth-child(3) {
+    animation: menu-item-hide 0.3s ease 0.1s forwards;
+  }
+  .header .wrap .menu ul li:nth-child(4) {
+    animation: menu-item-hide 0.3s ease 0.15s forwards;
   }
   .header #menu-toggle:checked ~ .wrap .hamburger {
     z-index: 10;
@@ -245,23 +284,24 @@ ul {
     animation: hamburger-line-3-open 0.5s ease forwards;
   }
   .header #menu-toggle:checked ~ .wrap .menu {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9;
-    background-color: rgba(0, 0, 0, 0.4745098039);
+    opacity: 1;
+    visibility: visible;
+    animation: menu-open 0.3s ease forwards;
   }
   .header #menu-toggle:checked ~ .wrap .menu ul {
-    width: 50%;
-    height: 100%;
-    background-color: #2876be;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
+    animation: menu-slide-in 0.3s ease forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .menu ul li:nth-child(1) {
+    animation: menu-item-show 0.3s ease 0.1s forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .menu ul li:nth-child(2) {
+    animation: menu-item-show 0.3s ease 0.15s forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .menu ul li:nth-child(3) {
+    animation: menu-item-show 0.3s ease 0.2s forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .menu ul li:nth-child(4) {
+    animation: menu-item-show 0.3s ease 0.25s forwards;
   }
   .main .wrap .btn-group {
     flex-direction: column;
@@ -318,6 +358,58 @@ ul {
   }
   100% {
     transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes menu-open {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.47);
+  }
+}
+@keyframes menu-close {
+  0% {
+    background-color: rgba(0, 0, 0, 0.47);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes menu-slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes menu-slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes menu-item-show {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes menu-item-hide {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
   }
 }
 @media screen and (max-width: 400px) {
