@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Score to Level</title>
+        <link rel="stylesheet" href="css/score-to-level.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="slogan">Score to Level</h1>
+            <div class="wrap">
+                <div>
+                    <input type="number" id="score" class="score-input" />
+                </div>
+                <div class="button-wrap">
+                    <button class="btn" id="calc-btn">轉換</button>
+                </div>
+            </div>
+            <div id="result-wrap" class="hide">
+                <div>
+                    您的分數為: <span id="result-score"></span>，等級為:
+                    <span id="result-level"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/score-to-level.js"></script>
+</html>
