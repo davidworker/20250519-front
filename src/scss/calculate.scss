@@ -44,7 +44,7 @@
     }
 }
 
-.result-wrap {
+#result-wrap {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
@@ -58,6 +58,10 @@
     color: #181818;
     font-size: 20px;
     font-weight: bold;
+
+    &.hide {
+        display: none;
+    }
 }
 
 #result {
