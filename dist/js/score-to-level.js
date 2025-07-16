@@ -49,6 +49,10 @@ calcBtnDOM.addEventListener("click", () => {
     }
 
     // 限制分數只能在 0 ~ 100 之間
+    if (score < 0 || score > 100) {
+        alert("分數只能在 0 ~ 100 之間");
+        return;
+    }
 
     let level = toLevel(score);
 
