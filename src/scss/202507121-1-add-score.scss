@@ -1,0 +1,53 @@
+@import "reset";
+
+.main {
+    margin: 20px auto;
+    .wrap {
+        padding: 20px;
+        border: 1px solid #c7c7c7;
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fn {
+            margin-bottom: 20px;
+            text-align: center;
+
+            .btn {
+                padding: 10px 20px;
+                border: 1px solid #c7c7c7;
+                border-radius: 5px;
+                background-color: #1ca751;
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: #0e7234;
+                }
+            }
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                padding: 10px;
+                border: 1px solid #c7c7c7;
+                text-align: center;
+            }
+
+            th {
+                background-color: #cbffdf;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}
