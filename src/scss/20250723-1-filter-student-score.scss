@@ -1,0 +1,141 @@
+@import "reset";
+
+.header {
+    text-align: center;
+    height: 60px;
+    border-bottom: 2px solid #dedede;
+    margin-bottom: 20px;
+
+    .header-title {
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.main {
+    .all-table-wrap {
+        &.is-both {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            .table {
+                display: none;
+
+                &.both-table {
+                    display: table;
+                }
+            }
+        }
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            background-color: #2198e7;
+            color: #fff;
+        }
+
+        th,
+        td {
+            border: 1px solid #dedede;
+            padding: 10px;
+            text-align: center;
+        }
+
+        &.both-table {
+            display: none;
+        }
+    }
+
+    .fn {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-end;
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            border: 1px solid #2198e7;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #1976b7;
+            }
+
+            &.all {
+                border-color: #21e79b;
+                background-color: transparent;
+                color: #000;
+
+                &.active {
+                    background-color: #21e79b;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background-color: #21e79b;
+                    color: #fff;
+                }
+            }
+
+            &.pass {
+                border-color: #21afe7;
+                background-color: transparent;
+                color: #000;
+
+                &.active {
+                    background-color: #21afe7;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background-color: #21afe7;
+                    color: #fff;
+                }
+            }
+
+            &.fail {
+                border-color: #e72121;
+                background-color: transparent;
+                color: #000;
+
+                &.active {
+                    background-color: #e72121;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background-color: #e72121;
+                    color: #fff;
+                }
+            }
+
+            &.both {
+                border-color: #e049d3;
+                background-color: transparent;
+                color: #000;
+
+                &.active {
+                    background-color: #e049d3;
+                    color: #fff;
+                }
+
+                &:hover {
+                    background-color: #e049d3;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
