@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Basic</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div id="app">
+            <div class="container">
+                <h1>Vue Basic</h1>
+                <hr />
+                <div class="form-group mb-2">
+                    <label for="account">Account</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="account"
+                        v-model="account"
+                        @keyup="onlyString"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        v-model="password"
+                    />
+                </div>
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="remember"
+                        v-model="remember"
+                    />
+                    <label for="remember" class="form-check-label"
+                        >Remember</label
+                    >
+                </div>
+
+                <div class="badge bg-primary">{{ account }}</div>
+                <div class="badge bg-danger">{{ password }}</div>
+                <div class="badge bg-success">{{ remember }}</div>
+                <div class="p-3 border border-3 mt-3">{{ article }}</div>
+
+                <div class="p-3 border border-3 mt-3" v-html="article"></div>
+                <div class="mt-2 p-3 border border-3">
+                    <div class="form-group mb-2">
+                        <input
+                            type="text"
+                            class="form-control"
+                            v-model="readMoreLink"
+                        />
+                    </div>
+                    <a :href="readMoreLink" class="btn btn-primary"
+                        >Read more</a
+                    >
+                </div>
+                <div class="mt-2 p-3 border border-3">
+                    <button class="btn btn-primary" @click="toggleRemember">
+                        Toggle Remember
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Outside #app</h2>
+            <div class="badge bg-primary">{{ account }}</div>
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/20250728-2-vue-basic.js"></script>
+</html>
