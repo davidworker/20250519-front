@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TODO APP</title>
+        <link rel="stylesheet" href="./css/todo-app.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="container">
+                <div class="wrap">
+                    <h1 class="title">TODO APP</h1>
+                    <div class="setting">
+                        <div class="user">
+                            <div class="current-user">
+                                <span>目前使用者：</span>
+                                <span class="light">user1</span>
+                            </div>
+                            <div class="change-user">
+                                <button class="btn warning">更換使用者</button>
+                            </div>
+                        </div>
+                        <div class="api">
+                            <div class="current-api">
+                                <span>API 位置：</span>
+                                <span class="light">未設定</span>
+                                <span
+                                    >（狀態：<span class="danger">未設定</span
+                                    >）</span
+                                >
+                            </div>
+                            <div class="change-api">
+                                <button class="btn primary">設定 API</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="create">
+                        <div class="input-group">
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="輸入代辦事項..."
+                                    v-model="processText"
+                                />
+                            </div>
+                            <div>
+                                <button class="btn primary" @click="addProcess">
+                                    新增
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-wrap">
+                            <div class="process list-item">
+                                <h2>進行中</h2>
+                                <ul class="list-group">
+                                    <template
+                                        v-for="(item, index) in processList"
+                                        :key="index"
+                                    >
+                                        <li @click="toDone(index)">
+                                            <div>{{ item.text }}</div>
+                                            <div>
+                                                <button class="btn danger">
+                                                    刪除
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div class="done list-item">
+                                <h2>已完成</h2>
+                                <ul class="list-group done">
+                                    <template
+                                        v-for="(item, index) in processDoneList"
+                                        :key="index"
+                                    >
+                                        <li @click="toProcess(index)">
+                                            <div>{{ item.text }}</div>
+                                            <div>
+                                                <button class="btn danger">
+                                                    刪除
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/todo-app.js"></script>
+</html>

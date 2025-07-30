@@ -1,0 +1,190 @@
+@import "reset";
+
+:root {
+    --border-color: #3482e9;
+    --border-radius: 15px;
+}
+
+html,
+body {
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(to right, #0a3e8388, #0a3f83dc);
+}
+
+#app {
+    .wrap {
+        padding: 15px;
+        border-radius: 10px;
+        background: linear-gradient(to bottom, #00000063, #06998063);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        margin: 20px auto;
+        min-height: 500px;
+        color: #fff;
+
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .setting {
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            display: grid;
+            // grid-template-columns: 1fr;
+            gap: 20px;
+            color: #cacaca;
+            margin-bottom: 20px;
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .api {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .light {
+                color: #fff;
+            }
+
+            .danger {
+                color: #ff0000;
+            }
+        }
+
+        .create {
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 20px;
+
+            .input-group {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                gap: 20px;
+                align-items: center;
+
+                input[type="text"] {
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 0;
+                    outline: none;
+                    background: #ffffff28;
+                    width: 100%;
+                    height: 40px;
+                    font-size: 1.1rem;
+                    color: #fff;
+
+                    &::placeholder {
+                        color: #ffffff9f;
+                    }
+
+                    &:focus {
+                        box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+
+        .list {
+            .list-wrap {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .list-item {
+                background: #ffffff28;
+                border-radius: var(--border-radius);
+                padding: 20px;
+                min-height: 300px;
+
+                h2 {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .list-group {
+                display: grid;
+                gap: 10px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px;
+                    border-radius: 5px;
+                    background: #ffffff28;
+                    color: #fff;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    box-shadow: 0 0 8px 0 rgba(156, 156, 156, 0.5);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                    }
+                }
+
+                &.done {
+                    li {
+                        background: #00000028;
+                        box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: 0;
+        background: #10413e;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+
+        &.warning {
+            background: #ff8800;
+            color: #fff;
+
+            &:hover {
+                background: #e97d01;
+            }
+        }
+
+        &.primary {
+            background: #3482e9;
+            color: #fff;
+
+            &:hover {
+                background: #2a69c2;
+            }
+        }
+
+        &.danger {
+            background: #ff3511;
+            color: #fff;
+
+            &:hover {
+                background: #e90101;
+            }
+        }
+    }
+}
