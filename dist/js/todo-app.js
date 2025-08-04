@@ -1,12 +1,36 @@
 import { Storage } from "./components/Storage.js";
 
-const todoStorage = new Storage("todo");
+let todoStorage = null;
+const userStorage = new Storage("user");
+
+let currentUser = userStorage.read();
+
+const setUser = async () => {
+    while (!currentUser) {
+        let result = await Swal.fire({
+            title: "請輸入使用者名稱",
+            input: "text",
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+        });
+
+        if (result.isConfirmed && result.value) {
+            currentUser = result.value;
+            userStorage.write(result.value);
+        }
+    }
+    currentUser = userStorage.read();
+    todoStorage = new Storage(`todo-${currentUser}`);
+};
+
+setUser();
 
 const { createApp } = Vue;
 
 const options = {
     data() {
         return {
+            currentUser: "",
             processText: "",
             processList: [],
         };
@@ -69,11 +93,19 @@ const options = {
                 }
             }
         },
+        async changeUser() {
+            currentUser = "";
+            await setUser();
+            this.processList = todoStorage.read([]);
+            this.currentUser = userStorage.read();
+        },
     },
     mounted() {
         console.log("mounted");
         this.processList = todoStorage.read([]);
-        console.log(this.processList, typeof this.processList);
+
+        this.currentUser = userStorage.read();
+        console.log(this.currentUser);
     },
 };
 

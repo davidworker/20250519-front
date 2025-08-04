@@ -15,10 +15,12 @@
                         <div class="user">
                             <div class="current-user">
                                 <span>目前使用者：</span>
-                                <span class="light">user1</span>
+                                <span class="light">{{ currentUser }}</span>
                             </div>
                             <div class="change-user">
-                                <button class="btn warning">更換使用者</button>
+                                <button class="btn warning" @click="changeUser">
+                                    更換使用者
+                                </button>
                             </div>
                         </div>
                         <div class="api">
