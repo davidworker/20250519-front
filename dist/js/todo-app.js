@@ -1,3 +1,7 @@
+import { Storage } from "./components/Storage.js";
+
+const todoStorage = new Storage("todo");
+
 const { createApp } = Vue;
 
 const options = {
@@ -5,7 +9,6 @@ const options = {
         return {
             processText: "",
             processList: [],
-            processDoneList: [],
         };
     },
     methods: {
@@ -17,52 +20,60 @@ const options = {
 
             // 新增代辦事項
             this.processList.push({
+                id: Date.now(),
                 text: this.processText,
+                status: "pending",
             });
 
             // 清空輸入框
             this.processText = "";
+
+            // 儲存資料
+            todoStorage.write(this.processList);
         },
-        toDone(index) {
-            // 將資料拿出
-            let item = this.processList[index];
+        toStatus(id, status) {
+            let items = this.processList.filter((item) => {
+                return item.id === id;
+            });
 
-            // 推到完成列表
-            this.processDoneList.push(item);
-
-            // 刪除原本的資料
-            this.processList.splice(index, 1);
+            if (items.length > 0) {
+                items[0].status = status;
+                todoStorage.write(this.processList);
+            }
         },
-        toProcess(index) {
-            // 將資料拿出
-            let item = this.processDoneList[index];
+        statusItems(status) {
+            return this.processList.filter((item) => {
+                return item.status === status;
+            });
+        },
+        async deleteItem(id) {
+            let items = this.processList.filter((item) => {
+                return item.id === id;
+            });
 
-            // 推到進行中列表
-            this.processList.push(item);
+            if (items.length > 0) {
+                const result = await Swal.fire({
+                    title: "刪除確認",
+                    text: `確定要刪除 ${items[0].text} 嗎？`,
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "確定",
+                    cancelButtonText: "取消",
+                });
 
-            // 刪除原本的資料
-            this.processDoneList.splice(index, 1);
+                if (result.isConfirmed) {
+                    this.processList = this.processList.filter((item) => {
+                        return item.id !== id;
+                    });
+                    todoStorage.write(this.processList);
+                }
+            }
         },
     },
     mounted() {
         console.log("mounted");
-        this.processList.push({
-            text: "1111aaaaa",
-        });
-        this.processList.push({
-            text: "2222bbbbb",
-        });
-        console.log(this.processList);
-
-        // mock data
-        this.processDoneList.push({
-            text: "1111done",
-        });
-        this.processDoneList.push({
-            text: "2222done",
-        });
-
-        console.log(this.processDoneList);
+        this.processList = todoStorage.read([]);
+        console.log(this.processList, typeof this.processList);
     },
 };
 

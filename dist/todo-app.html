@@ -54,16 +54,42 @@
                     <div class="list">
                         <div class="list-wrap">
                             <div class="process list-item">
+                                <h2>待處理</h2>
+                                <ul class="list-group">
+                                    <template
+                                        v-for="(item, index) in statusItems('pending')"
+                                        :key="index"
+                                    >
+                                        <li
+                                            @click="toStatus(item.id, 'process')"
+                                        >
+                                            <div>{{ item.text }}</div>
+                                            <div>
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
+                                                    刪除
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div class="process list-item">
                                 <h2>進行中</h2>
                                 <ul class="list-group">
                                     <template
-                                        v-for="(item, index) in processList"
+                                        v-for="(item, index) in statusItems('process')"
                                         :key="index"
                                     >
-                                        <li @click="toDone(index)">
+                                        <li @click="toStatus(item.id, 'done')">
                                             <div>{{ item.text }}</div>
                                             <div>
-                                                <button class="btn danger">
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
                                                     刪除
                                                 </button>
                                             </div>
@@ -75,13 +101,18 @@
                                 <h2>已完成</h2>
                                 <ul class="list-group done">
                                     <template
-                                        v-for="(item, index) in processDoneList"
+                                        v-for="(item, index) in statusItems('done')"
                                         :key="index"
                                     >
-                                        <li @click="toProcess(index)">
+                                        <li
+                                            @click="toStatus(item.id, 'pending')"
+                                        >
                                             <div>{{ item.text }}</div>
                                             <div>
-                                                <button class="btn danger">
+                                                <button
+                                                    class="btn danger"
+                                                    @click.stop="deleteItem(item.id)"
+                                                >
                                                     刪除
                                                 </button>
                                             </div>
@@ -95,6 +126,8 @@
             </div>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/todo-app.js"></script>
+    <script type="module" src="./js/todo-app.js"></script>
+    <!-- <script src="./js/todo-app.js"></script> -->
 </html>
