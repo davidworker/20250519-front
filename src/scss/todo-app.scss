@@ -51,6 +51,17 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                .current-api {
+                    display: grid;
+                    gap: 10px;
+
+                    .api-btn {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 10px;
+                    }
+                }
             }
 
             .light {
@@ -180,7 +191,7 @@ body {
 
         &.danger {
             background: #ff3511;
-            color: #fff;
+            color: #fff !important;
 
             &:hover {
                 background: #e90101;

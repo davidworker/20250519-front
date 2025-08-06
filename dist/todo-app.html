@@ -25,15 +25,37 @@
                         </div>
                         <div class="api">
                             <div class="current-api">
-                                <span>API 位置：</span>
-                                <span class="light">未設定</span>
-                                <span
-                                    >（狀態：<span class="danger">未設定</span
-                                    >）</span
-                                >
+                                <div>
+                                    <span>API 位置：</span>
+                                    <span class="light">{{ api }}</span>
+                                    <span
+                                        >（狀態：
+                                        <span class="danger" v-show="!api"
+                                            >未設定</span
+                                        >
+                                        <span class="success" v-show="api"
+                                            >已設定</span
+                                        >
+                                        ）</span
+                                    >
+                                </div>
+                                <div class="api-btn">
+                                    <button
+                                        class="btn primary"
+                                        @click="getTodo"
+                                    >
+                                        載入
+                                    </button>
+                                    <button class="btn danger" @click="setTodo">
+                                        儲存
+                                    </button>
+                                </div>
                             </div>
+
                             <div class="change-api">
-                                <button class="btn primary">設定 API</button>
+                                <button class="btn primary" @click="setAPI">
+                                    設定 API
+                                </button>
                             </div>
                         </div>
                     </div>
