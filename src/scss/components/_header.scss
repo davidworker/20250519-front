@@ -1,0 +1,53 @@
+.header {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.4);
+
+    .header-wrap {
+        --active-color: #0565a5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .logo {
+            h1 {
+                font-size: 1.8rem;
+                color: var(--active-color);
+            }
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 20px;
+            font-weight: 700;
+
+            li {
+                transition: color 0.3s ease;
+
+                &.active {
+                    color: var(--active-color);
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: var(--active-color);
+                    }
+                }
+
+                &:hover {
+                    color: var(--active-color);
+                }
+            }
+        }
+    }
+}
