@@ -1,0 +1,20 @@
+.footer {
+    background: #1f2937;
+    color: #fff;
+    height: 80px;
+
+    .footer-wrap {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        align-content: space-around;
+        justify-items: center;
+        height: 100%;
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+    }
+}
