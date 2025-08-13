@@ -37,6 +37,7 @@ ul {
   width: 100%;
   height: 80px;
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.4);
+  z-index: 9;
 }
 .header .header-wrap {
   --active-color: #0565a5;
@@ -91,4 +92,58 @@ ul {
 .footer .footer-wrap h2 {
   font-size: 1.1rem;
   font-weight: 400;
+}
+
+.banner {
+  height: 100vh;
+  background-image: url("../project/images/index_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.banner .banner-wrap {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.banner .banner-wrap .title {
+  font-size: 3rem;
+}
+.banner .banner-wrap .content {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.banner .banner-wrap .button-group {
+  margin-top: 20px;
+}
+.banner .banner-wrap .button-group .button {
+  padding: 15px 30px;
+  border-radius: 99px;
+  background-color: #fff;
+  color: #2e48da;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 0;
+}
+.banner .banner-wrap .button-group .button:hover {
+  background-color: #2e48da;
+  color: #fff;
 }/*# sourceMappingURL=project-index.css.map */
