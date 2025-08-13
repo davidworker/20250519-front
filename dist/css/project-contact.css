@@ -72,4 +72,23 @@ ul {
 }
 .header .header-wrap .menu ul li:hover {
   color: var(--active-color);
+}
+
+.footer {
+  background: #1f2937;
+  color: #fff;
+  height: 80px;
+}
+.footer .footer-wrap {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  align-content: space-around;
+  justify-items: center;
+  height: 100%;
+}
+.footer .footer-wrap h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
 }/*# sourceMappingURL=project-contact.css.map */
